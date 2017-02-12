@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8" />
+    <title><?= $titulek ?></title>
+    <meta name="description" content="<?= $popis ?>" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4996cc">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/own.css" type="text/css"/>
+
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browser-upgrade">Používáte <strong>zastaralou</strong> verzi prohlížeče. Prosím
+    <a href="http://browsehappy.com/">aktualizujte svůj prohlížeč</a> pro zlepšení vašeho zážitku.
+</p>
+<![endif]-->
+<div class="content">
+
+    <div class="header-container container-fluid delete-bg-menu <?= $page=="uvodni-strana"?'bg-menu-hp':'bg-menu'?>" id="upper">
+
+
+                <nav class="navbar navbar-toggleable-lg navbar-light content-container-header hidden-lg-down" id="menu">
+                    <a class="navbar-brand" href="/uvodni-strana"><img src="<?=$page == "uvodni-strana"?"../img/svg/logo-hp.svg":"../img/svg/logo.svg"?>"></a>
+
+                    <div class="collapse big-menu navbar-collapse cl-effect-5 <?=$page=="uvodni-strana"?"reverse-menu-after":""?>">
+                        <div class="navbar-nav menu-middle-align">
+                            <a class="<?= $page=="sluzby-a-cenik"?'currentPage':''?>" href="/sluzby-a-cenik"><span data-hover="Služby">Ciferník služeb</span></a>
+                            <a class="<?= $page=="jak-pracuji"?'currentPage':''?>" href="/jak-pracuji"><span data-hover="Jak?">Lexikon kouzel</span></a>
+                            <a class="<?= $page=="reference"?'currentPage':''?>" href="/reference"><span data-hover="Reference">Okouzlení klienti</span></a>
+                            <a class="<?= $page=="blog"?'currentPage':''?>" href="/blog"><span data-hover="Blog">Čáry máry</span></a>
+                            <a class="<?= $page=="o-mne"?'currentPage':''?>" href="/o-mne"><span data-hover="O mně">Věžníkův příběh</span></a>
+                            <a class="last-item <?= $page=="kontakt"?'currentPage':''?>" href="/kontakt"><span data-hover="Kontakt">Kontaktní zvon</span></a>
+                        </div>
+                    </div>
+                </nav>
+
+        <header class="content-container-header delete-bg-menu">
+            <nav class="navbar navbar-toggleable-lg navbar-light hidden-xl-up fixed-top <?= $page=="uvodni-strana"?'bg-menu-hp':'bg-menu'?>" id="menu">
+                <button class="navbar-toggler navbar-toggler-right menu-small-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="p-2" id="menuLabel">MENU</span> <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="/uvodni-strana"><img src="<?=$page == "uvodni-strana"?"../img/svg/logo-hp.svg":"../img/svg/logo.svg"?>"></a>
+
+                <div class="collapse navbar-collapse second-menu" id="navbarNavAltMarkup">
+                    <div class="navbar-nav menu-small">
+                        <a class="nav-item nav-link <?= $page=="sluzby-a-cenik"?'currentPage':''?>" href="/sluzby-a-cenik">Ciferník služeb</a>
+                        <a class="nav-item nav-link <?= $page=="jak-pracuji"?'currentPage':''?>" href="/jak-pracuji">Lexikon kouzel</a>
+                        <a class="nav-item nav-link <?= $page=="reference"?'currentPage':''?>" href="/reference">Okouzlení klienti</a>
+                        <a class="nav-item nav-link <?= $page=="blog"?'currentPage':''?>" href="/blog">Čáry máry</a>
+                        <a class="nav-item nav-link <?= $page=="o-mne"?'currentPage':''?>" href="/o-mne">Věžníkův příběh</a>
+                        <a class="nav-item nav-link <?= $page=="kontakt"?'currentPage':''?>" href="/kontakt">Kontaktní zvon</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+
+    <?php $this->kontroler->vypisPohled(); ?>
+
+</div>
+
+    <div class="footer-container">
+        <footer class="content-container container-fluid row" style="">
+            <div class="col-lg-4 col-md-4 footer-contact">
+                <h3>Těším se na vaši zprávu</h3>
+                <p class="p-footer"><a href="mailto:roman@veznik.cz">roman@veznik.cz</a></p>
+            </div>
+
+
+            <div class="col-lg-2 col-md-4 footer-social">
+                <h3>Jsem sociální</h3>
+                <div class="footer-social-icons">
+                    <a href="https://www.linkedin.com/in/romanveznik"><img src="../img/social-media/linkedin.svg"></a>
+                    <a href="https://twitter.com/Roman__Veznik"><img src="../img/social-media/twitter.svg"></a>
+                    <a href="https://www.facebook.com/kouzlimseslovy"><img src="../img/social-media/facebook.svg"></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-1"></div>
+
+            <div class="col-lg-2 col-md-3 footer-up">
+               <?php if(!in_array($page,$nahoru)): ?>
+                   <h3><a href="#upper">Nahoru</a></h3>
+                   <div class="container-ladder">
+                        <img src="../img/footer-ladder.png" alt="nahoru, Roman Věžník, žebřík">
+                    </div>
+                <?php endif; ?>
+            </div>
+        </footer>
+    </div>
+
+<script src="../js/tether.min.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/js.js"></script>
+
+</body>
+</html>
